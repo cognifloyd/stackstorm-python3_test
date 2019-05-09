@@ -12,7 +12,7 @@ class TestStdlibImportAction(Action):
     --python3 flag.
     """
     def run(self):
-        from cassandra.cluster import Cluster
+        from cassandra.cluster import Cluster  # NOQA
         cluster = Cluster()  # NOQA
 
         import concurrent
