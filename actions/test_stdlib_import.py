@@ -12,6 +12,7 @@ class TestStdlibImportAction(Action):
     --python3 flag.
     """
     def run(self):
+        # pylint: disable=no-name-in-module
         from cassandra.cluster import Cluster  # NOQA
         cluster = Cluster()  # NOQA
 
