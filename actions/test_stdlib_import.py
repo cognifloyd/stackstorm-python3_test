@@ -1,3 +1,5 @@
+import sys
+
 from st2common.runners.base_action import Action
 
 
@@ -12,6 +14,9 @@ class TestStdlibImportAction(Action):
     --python3 flag.
     """
     def run(self):
+        print('Using Python binary: %s' % (sys.executable))
+        print('Using Python version: %s' % (sys.version))
+
         # pylint: disable=no-name-in-module
         from cassandra.cluster import Cluster  # NOQA
         cluster = Cluster()  # NOQA
