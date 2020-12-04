@@ -22,7 +22,7 @@ class TestStdlibImportAction(Action):
         cluster = Cluster()  # NOQA
 
         import concurrent
-        if 'lib/python3' not in concurrent.__file__:
+        if 'lib/python3' not in concurrent.__file__ and 'lib64/python3' not in concurrent.__file__:
             msg = 'concurrent module was not imported from Python 3 stdlib'
             return False, msg
 
